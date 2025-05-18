@@ -13,17 +13,16 @@
             --white-ice: #f8f9fa;
             --red-cerebral: #b30000;
         }
-        
+
         body {
-    
-    transition: opacity 1s ease-in;
+            transition: opacity 1s ease-in;
             font-family: 'Lato', sans-serif;
             background-color: var(--blue-dark);
             color: var(--white-ice);
             margin: 0;
             padding: 0;
         }
-        
+
         .slide {
             width: 390px;
             min-height: 844px;
@@ -31,11 +30,11 @@
             overflow: hidden;
             margin: 0 auto;
         }
-        
+
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(to bottom, rgba(26, 26, 46, 0.3), rgba(26, 26, 46, 0.95));
             position: absolute;
@@ -45,7 +44,7 @@
             height: 100%;
             z-index: 1;
         }
-        
+
         .content {
             position: relative;
             z-index: 2;
@@ -56,7 +55,7 @@
             width: 100%;
             height: 100%;
         }
-        
+
         .profile-img-container {
             display: flex;
             justify-content: center;
@@ -65,7 +64,7 @@
             margin: 0 auto 20px auto;
             text-align: center;
         }
-        
+
         .profile-img {
             width: 220px;
             height: 220px;
@@ -77,38 +76,37 @@
             display: block;
             margin: 0 auto;
         }
-        
+
         .profile-img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
         }
-        
+
         .accent {
             color: var(--red-cerebral);
         }
-        
+
         .fade-in {
             animation: fadeIn 1.5s ease-out forwards;
-            
         }
-        
+
         .fade-in-delay-1 {
             animation-delay: 0.3s;
         }
-        
+
         .fade-in-delay-2 {
             animation-delay: 0.6s;
         }
-        
+
         .fade-in-delay-3 {
             animation-delay: 0.9s;
         }
-        
+
         @keyframes fadeIn {
-            from {  transform: translateY(20px); }
+            from { transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .specialty-badge {
             display: inline-block;
             padding: 8px 14px;
@@ -119,38 +117,23 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
         }
-        
+
         .specialty-badge:hover {
             background-color: var(--red-cerebral);
             transform: translateY(-3px);
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
         }
     </style>
 </head>
 <body>
     <div class="slide flex flex-col items-center justify-between">
-        <!-- Background with pseudo-parallax effect -->
+        <!-- Background -->
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80');"></div>
         <div class="hero-gradient"></div>
-        
+
         <!-- Content -->
         <div class="content flex flex-col items-center justify-center w-full h-full py-12 px-6">
-            <!-- Central content -->
+            <!-- Main Content -->
             <div class="text-center my-8 fade-in w-full flex flex-col items-center">
-                <!-- Foto del Dr. Mario Giordano - Perfettamente centrata -->
                 <div class="profile-img-container flex justify-center items-center w-full">
                     <img src="https://page1.genspark.site/v1/base64_upload/3b659e6a902c9ffdd08df34bd405bcf0" alt="Dr. Mario Giordano" class="profile-img mx-auto">
                 </div>
@@ -158,7 +141,7 @@
                 <h1 class="text-4xl font-bold mb-2">Dr. Mario Giordano</h1>
                 <h2 class="text-2xl mb-3">Neurochirurgo Senior</h2>
                 <h3 class="text-xl font-light mb-8"><span class="accent">INI Hannover</span></h3>
-                
+
                 <div class="mt-6 fade-in fade-in-delay-1 text-center">
                     <div class="specialty-badge">
                         <i class="fas fa-brain mr-2"></i> Base Cranica
@@ -171,34 +154,24 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Bottom section -->
+
+            <!-- Footer section -->
             <div class="text-center mt-auto mb-8 fade-in fade-in-delay-2">
-                <p class="text-sm opacity-80 mb-8">
+                <p class="text-sm opacity-80 mb-4">
                     <i class="fas fa-map-marker-alt mr-1"></i> Hannover, Germania
                 </p>
-                
-                
+                <div class="mt-2">
+                    <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 110px; opacity: 0.9;">
+                </div>
             </div>
         </div>
     </div>
 
-        <div style="width: 100%; text-align: center; margin-bottom: 20px;">
-            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="max-width: 120px; opacity: 0.9;">
-        </div>
-        
+    <!-- Pulsante avanti -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <a href="slide_02.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+    </div>
 
-        
-            <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-                <a href="slide_02.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
-            </div>
-            
-            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
-            <div></div>
-        </div>
-        <a href="slide_02.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a></div>
-
-        <!-- script disattivato per uso offline -->
-        
+    <!-- script disattivato per uso offline -->
 </body>
 </html>
