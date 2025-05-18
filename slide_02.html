@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Profilo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .specialty-box {
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--red-cerebral);
+            padding: 16px;
+            margin-bottom: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .specialty-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .specialty-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(179, 0, 0, 0.1);
+            margin-bottom: 12px;
+            color: var(--white-ice);
+            font-size: 24px;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center justify-between">
+        <!-- Content -->
+        <div class="content flex flex-col w-full h-full py-10 px-6">
+            <!-- Header -->
+            <div class="text-center mb-8 fade-in">
+                <h2 class="text-4xl font-bold mb-2">Profilo</h2>
+                <div class="section-divider mx-auto"></div>
+            </div>
+            
+            <!-- Introduction -->
+            <div class="mb-8 fade-in fade-in-delay-1">
+                <p class="text-lg leading-relaxed mb-4">
+                    <span class="text-xl font-semibold accent">Neurochirurgo italo-tedesco</span> con oltre 20 anni di esperienza internazionale nell'ambito della neurochirurgia avanzata.
+                </p>
+                <p class="text-base mb-4">
+                    Attualmente <span class="font-semibold">Dirigente Medico (Oberarzt)</span> presso l'<span class="accent font-semibold">INI di Hannover</span>, centro d'eccellenza mondiale riconosciuto per le tecniche neurochirurgiche all'avanguardia.
+                </p>
+            </div>
+            
+            <!-- Specialties -->
+            <div class="mb-8 fade-in fade-in-delay-2">
+                <h3 class="text-xl font-semibold mb-4">Specializzazioni</h3>
+                
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-1">Tecniche Mininvasive</h4>
+                    <p class="text-sm opacity-80">Approcci chirurgici avanzati con minima invasività e massima efficacia</p>
+                </div>
+                
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-1">Chirurgia Base Cranica</h4>
+                    <p class="text-sm opacity-80">Interventi altamente specializzati su tumori e patologie della base cranica</p>
+                </div>
+                
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-1">Imaging Intraoperatorio</h4>
+                    <p class="text-sm opacity-80">Utilizzo di tecnologie avanzate di visualizzazione durante l'intervento</p>
+                </div>
+                
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h4 class="text-lg font-medium mb-1">Realtà Mista in Chirurgia</h4>
+                    <p class="text-sm opacity-80">Pioniere nell'applicazione di AR e VR nella neurochirurgia moderna</p>
+                </div>
+            </div>
+            
+            <!-- Bottom section -->
+            
+        </div>
+    </div>
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_01.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_03.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+
+        <!-- script disattivato per uso offline -->
+        
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Frase Conclusiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .quote-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(248, 249, 250, 0.05);
+        }
+        
+        .quote-container::before {
+            content: """;
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            font-size: 150px;
+            font-family: 'Montserrat', serif;
+            color: rgba(179, 0, 0, 0.1);
+            line-height: 1;
+        }
+        
+        .quote-text {
+            font-size: 24px;
+            line-height: 1.4;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: 500;
+            font-style: italic;
+            color: rgba(248, 249, 250, 0.8);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1000') no-repeat center center;
+            background-size: cover;
+            opacity: 0.06;
+            z-index: 0;
+        }
+        
+        .image-container {
+            position: relative;
+            height: 280px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            margin: 40px 0;
+        }
+        
+        .vr-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: url('https://images.unsplash.com/photo-1557825835-70d97c4aa567?auto=format&fit=crop&q=80&w=1000') no-repeat center center;
+            background-size: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover .vr-image {
+            transform: scale(1.05);
+        }
+        
+        .overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(26, 26, 46, 0.9), transparent);
+            color: var(--white-ice);
+        }
+        
+        .header-animated {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header-animated::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background-color: var(--red-cerebral);
+            animation: lineGrow 2s ease-out forwards;
+        }
+        
+        @keyframes lineGrow {
+            from { width: 0; }
+            to { width: 40%; }
+        }
+        
+        .brain-icon {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            font-size: 180px;
+            opacity: 0.03;
+            z-index: 0;
+            transform: rotate(-15deg);
+        }
+        
+        .highlight {
+            color: var(--red-cerebral);
+            font-weight: 600;
+        }
+        
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .ribbon-content {
+            position: absolute;
+            top: 30px;
+            right: -35px;
+            transform: rotate(45deg);
+            background-color: var(--red-cerebral);
+            color: var(--white-ice);
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            width: 200px;
+            padding: 5px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center">
+        <div class="content flex flex-col w-full h-full py-10 px-6 relative">
+            <!-- Brain icon background -->
+            <div class="brain-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            
+            <!-- Header -->
+            <div class="text-center mb-4 fade-in">
+                <h2 class="text-4xl font-bold mb-2 header-animated">Visione</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="text-base mt-4 opacity-80">Guardando al futuro della neurochirurgia</p>
+            </div>
+            
+            <!-- AR/VR Surgery Image -->
+            <div class="image-container fade-in fade-in-delay-1">
+                <div class="vr-image"></div>
+                <div class="ribbon">
+                    <div class="ribbon-content">INNOVAZIONE</div>
+                </div>
+                <div class="overlay-text">
+                    <h3 class="text-lg font-semibold">Chirurgia neuronale con realtà aumentata</h3>
+                    <p class="text-xs opacity-80">Tecnologie avanzate per interventi di precisione</p>
+                </div>
+            </div>
+            
+            <!-- Quote -->
+            <div class="quote-container fade-in fade-in-delay-2">
+                <div class="image-overlay"></div>
+                <p class="quote-text">
+                    "Scolpire il futuro della neurochirurgia con <span class="highlight">precisione</span>, <span class="highlight">innovazione</span> e <span class="highlight">passione</span>."
+                </p>
+                <p class="quote-author">— Dr. Mario Giordano</p>
+            </div>
+            
+            <!-- Key Values -->
+            <div class="grid grid-cols-3 gap-3 mt-4 fade-in fade-in-delay-3">
+                <div class="bg-opacity-10 bg-white rounded-lg p-3 text-center">
+                    <i class="fas fa-microscope text-xl mb-2 text-red-600"></i>
+                    <h4 class="text-sm font-semibold">Precisione</h4>
+                </div>
+                <div class="bg-opacity-10 bg-white rounded-lg p-3 text-center">
+                    <i class="fas fa-lightbulb text-xl mb-2 text-red-600"></i>
+                    <h4 class="text-sm font-semibold">Innovazione</h4>
+                </div>
+                <div class="bg-opacity-10 bg-white rounded-lg p-3 text-center">
+                    <i class="fas fa-heartbeat text-xl mb-2 text-red-600"></i>
+                    <h4 class="text-sm font-semibold">Passione</h4>
+                </div>
+            </div>
+            
+            <!-- Bottom navigation -->
+            <div class="text-center mt-auto mb-6 fade-in fade-in-delay-3">
+                
+            </div>
+        </div>
+    </div>
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_08.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_10.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+
+        <!-- script disattivato per uso offline -->
+        
+</body>
+</html>

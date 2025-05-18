@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Competenze Tecniche</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .tech-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--red-cerebral);
+            transition: all 0.3s ease;
+            transform: translateX(0);
+        }
+        
+        .tech-card:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(179, 0, 0, 0.7), rgba(26, 26, 46, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 12px;
+        }
+        
+        .tech-icon i {
+            font-size: 26px;
+            color: var(--white-ice);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: rgba(179, 0, 0, 0.2);
+            color: var(--white-ice);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-top: 6px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        .rotate-animation {
+            animation: rotate 8s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .tech-progress {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        
+        .tech-progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--red-cerebral), #ff4d4d);
+            border-radius: 2px;
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center">
+        <div class="content flex flex-col w-full h-full py-10 px-6">
+            <!-- Header -->
+            <div class="text-center mb-8 fade-in">
+                <h2 class="text-4xl font-bold mb-2">Competenze Tecniche</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="text-base mt-4 opacity-80">Tecnologie avanzate per la neurochirurgia</p>
+            </div>
+            
+            <!-- Tech Cards Section -->
+            <div class="flex flex-col w-full mt-2">
+                <!-- Card 1: Navigazione neuronale -->
+                <div class="tech-card fade-in fade-in-delay-1">
+                    <div class="flex items-start gap-4">
+                        <div class="tech-icon pulse-animation">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">Navigazione neuronale</h3>
+                            <p class="text-sm opacity-80 mb-2">TAC intraoperatoria (AERO) con precisione submillimetrica</p>
+                            <div class="flex flex-wrap">
+                                <span class="badge"><i class="fas fa-bullseye mr-1"></i> Precisione</span>
+                                <span class="badge"><i class="fas fa-x-ray mr-1"></i> Imaging 3D</span>
+                            </div>
+                            <div class="tech-progress">
+                                <div class="tech-progress-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Risonanza intraoperatoria -->
+                <div class="tech-card fade-in fade-in-delay-1">
+                    <div class="flex items-start gap-4">
+                        <div class="tech-icon pulse-animation">
+                            <i class="fas fa-magnet"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">Risonanza intraoperatoria</h3>
+                            <p class="text-sm opacity-80 mb-2">iMRI e BrainSuite per visualizzazione in tempo reale</p>
+                            <div class="flex flex-wrap">
+                                <span class="badge"><i class="fas fa-brain mr-1"></i> Soft tissue</span>
+                                <span class="badge"><i class="fas fa-clock mr-1"></i> Real-time</span>
+                            </div>
+                            <div class="tech-progress">
+                                <div class="tech-progress-bar" style="width: 98%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Neuroendoscopia -->
+                <div class="tech-card fade-in fade-in-delay-2">
+                    <div class="flex items-start gap-4">
+                        <div class="tech-icon pulse-animation">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">Neuroendoscopia</h3>
+                            <p class="text-sm opacity-80 mb-2">Exoscopio VITOM 3D per visualizzazione ad alta definizione</p>
+                            <div class="flex flex-wrap">
+                                <span class="badge"><i class="fas fa-eye mr-1"></i> Visione HD</span>
+                                <span class="badge"><i class="fas fa-cube mr-1"></i> 3D</span>
+                            </div>
+                            <div class="tech-progress">
+                                <div class="tech-progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Montaggio video didattici -->
+                <div class="tech-card fade-in fade-in-delay-2">
+                    <div class="flex items-start gap-4">
+                        <div class="tech-icon pulse-animation">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">Montaggio video didattici</h3>
+                            <p class="text-sm opacity-80 mb-2">Creazione di contenuti formativi per la formazione medica</p>
+                            <div class="flex flex-wrap">
+                                <span class="badge"><i class="fas fa-graduation-cap mr-1"></i> Training</span>
+                                <span class="badge"><i class="fas fa-film mr-1"></i> Educational</span>
+                            </div>
+                            <div class="tech-progress">
+                                <div class="tech-progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 5: Realtà mista e realtà virtuale -->
+                <div class="tech-card fade-in fade-in-delay-3">
+                    <div class="flex items-start gap-4">
+                        <div class="tech-icon rotate-animation">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-1">Realtà mista e virtuale</h3>
+                            <p class="text-sm opacity-80 mb-2">Applicazione di tecnologie XR per pianificazione e guida chirurgica</p>
+                            <div class="flex flex-wrap">
+                                <span class="badge"><i class="fas fa-glasses mr-1"></i> AR/VR</span>
+                                <span class="badge"><i class="fas fa-project-diagram mr-1"></i> Ologrammi</span>
+                                <span class="badge"><i class="fas fa-syringe mr-1"></i> Precisione</span>
+                            </div>
+                            <div class="tech-progress">
+                                <div class="tech-progress-bar" style="width: 97%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quote -->
+            <div class="text-center mt-8 mb-2 fade-in fade-in-delay-3">
+                <p class="italic text-sm opacity-80">"La tecnologia è lo strumento, l'eccellenza clinica è l'obiettivo."</p>
+            </div>
+            
+            <!-- Bottom section -->
+            <div class="text-center mt-auto mb-6 fade-in fade-in-delay-3">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- script disattivato per uso offline -->
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_04.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_06.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Formazione</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        /* Timeline Styling */
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 40px;
+        }
+        
+        .timeline::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .timeline-bar {
+            position: absolute;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 100%;
+            top: 36px;
+        }
+        
+        .timeline-container {
+            position: relative;
+            width: 750px;
+            margin: 0 auto;
+        }
+        
+        .timeline-point {
+            position: absolute;
+            top: 28px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--red-cerebral);
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            position: absolute;
+            width: 200px;
+            transform: translateX(-50%);
+            margin-top: 40px;
+            
+            animation: fadeSlideUp 0.8s forwards;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            font-weight: 700;
+            font-size: 16px;
+            top: 0;
+            transform: translateX(-50%);
+            color: var(--white-ice);
+        }
+        
+        @keyframes fadeSlideUp {
+            from {
+                
+                transform: translate(-50%, 20px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+        
+        .education-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--red-cerebral);
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: rgba(179, 0, 0, 0.2);
+            color: var(--white-ice);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        
+        .education-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            color: var(--white-ice);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center justify-between">
+        <div class="content flex flex-col w-full h-full py-10 px-6">
+            <!-- Header -->
+            <div class="text-center mb-8 fade-in">
+                <h2 class="text-4xl font-bold mb-2">Formazione</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="text-base mt-4 opacity-80">Percorso accademico e professionale</p>
+            </div>
+            
+            <!-- Timeline Section -->
+            <div class="timeline fade-in fade-in-delay-1">
+                <div class="timeline-bar"></div>
+                <div class="timeline-container">
+                    <!-- 2002 -->
+                    <div class="timeline-point" style="left: 0%;"></div>
+                    <div class="timeline-year" style="left: 0%;">2002</div>
+                    <div class="timeline-content" style="left: 0%; animation-delay: 0.1s;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="text-base font-semibold mb-1">Laurea in Medicina</h4>
+                            <p class="text-xs opacity-80 mb-2">Università di Napoli</p>
+                            <div class="badge">110/110 cum laude</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2007 -->
+                    <div class="timeline-point" style="left: 20%;"></div>
+                    <div class="timeline-year" style="left: 20%;">2007</div>
+                    <div class="timeline-content" style="left: 20%; animation-delay: 0.3s;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h4 class="text-base font-semibold mb-1">Specializzazione</h4>
+                            <p class="text-xs opacity-80 mb-2">Neurochirurgia</p>
+                            <div class="badge">50/50 cum laude</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2016 -->
+                    <div class="timeline-point" style="left: 40%;"></div>
+                    <div class="timeline-year" style="left: 40%;">2016</div>
+                    <div class="timeline-content" style="left: 40%; animation-delay: 0.5s;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4 class="text-base font-semibold mb-1">Dr. Med.</h4>
+                            <p class="text-xs opacity-80 mb-2">Magdeburgo</p>
+                            <div class="badge">cum laude</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2018 -->
+                    <div class="timeline-point" style="left: 60%;"></div>
+                    <div class="timeline-year" style="left: 60%;">2018</div>
+                    <div class="timeline-content" style="left: 60%; animation-delay: 0.7s;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4 class="text-base font-semibold mb-1">Abilitazioni</h4>
+                            <p class="text-xs opacity-80 mb-2">Italia/Germania</p>
+                            <div class="badge">Doppia abilitazione</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2020 -->
+                    <div class="timeline-point" style="left: 80%;"></div>
+                    <div class="timeline-year" style="left: 80%;">2020</div>
+                    <div class="timeline-content" style="left: 80%; animation-delay: 0.9s;">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h4 class="text-base font-semibold mb-1">Professore Associato</h4>
+                            <p class="text-xs opacity-80 mb-2">Abilitazione</p>
+                            <div class="badge">Docenza Universitaria</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Education -->
+            <div class="mt-8 fade-in fade-in-delay-2">
+                <h3 class="text-xl font-semibold mb-4">Formazione Continua</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center p-3 bg-opacity-10 bg-white rounded-lg">
+                        <i class="fas fa-bookmark text-red-600 mr-3"></i>
+                        <div>
+                            <h4 class="text-sm font-medium">Workshop Didattica Universitaria</h4>
+                            <p class="text-xs opacity-70">Università di Magdeburgo</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 bg-opacity-10 bg-white rounded-lg">
+                        <i class="fas fa-microscope text-red-600 mr-3"></i>
+                        <div>
+                            <h4 class="text-sm font-medium">Corso avanzato Neuroendoscopia</h4>
+                            <p class="text-xs opacity-70">International Neuroscience Institute</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 bg-opacity-10 bg-white rounded-lg">
+                        <i class="fas fa-vr-cardboard text-red-600 mr-3"></i>
+                        <div>
+                            <h4 class="text-sm font-medium">Certificazione Realtà Mista in Chirurgia</h4>
+                            <p class="text-xs opacity-70">Advanced Medical Technology Institute</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom section -->
+            
+        </div>
+    </div>
+    
+    <!-- script disattivato per uso offline -->
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_02.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_04.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+</body>
+</html>

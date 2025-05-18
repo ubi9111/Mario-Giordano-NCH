@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Esperienza Clinica</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        /* Vertical Timeline Styling */
+        .timeline-vertical {
+            position: relative;
+            max-width: 320px;
+            margin: 20px auto;
+        }
+        
+        .timeline-vertical::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 0 0 30px 50px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--red-cerebral);
+            left: 10px;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(179, 0, 0, 0.2);
+        }
+        
+        .timeline-date {
+            color: var(--white-ice);
+            opacity: 0.85;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 3px solid var(--red-cerebral);
+            margin-top: 5px;
+            margin-left: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .timeline-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--white-ice);
+        }
+        
+        .timeline-desc {
+            font-size: 14px;
+            color: var(--white-ice);
+            opacity: 0.8;
+        }
+        
+        .timeline-badge {
+            margin-top: 8px;
+            display: inline-block;
+            background-color: rgba(179, 0, 0, 0.2);
+            color: var(--white-ice);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        
+        .stats-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 24px;
+            border-top: 3px solid var(--red-cerebral);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-number {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(45deg, var(--white-ice), #b9b9b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        .stats-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .circle-icon {
+            width: 32px;
+            height: 32px;
+            background-color: rgba(179, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center">
+        <div class="content flex flex-col w-full h-full py-10 px-6">
+            <!-- Header -->
+            <div class="text-center mb-6 fade-in">
+                <h2 class="text-4xl font-bold mb-2">Esperienza Clinica</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="text-base mt-4 opacity-80">Carriera professionale e competenze</p>
+            </div>
+            
+            <!-- Stats Card -->
+            <div class="stats-card fade-in fade-in-delay-1 mb-8">
+                <div class="stats-number">3.000+</div>
+                <div class="stats-label">Interventi chirurgici eseguiti</div>
+                <div class="flex justify-center gap-3 mt-3">
+                    <span class="timeline-badge"><i class="fas fa-brain mr-1"></i> Chirurgia cerebrale</span>
+                    <span class="timeline-badge"><i class="fas fa-microscope mr-1"></i> Microchirurgia</span>
+                </div>
+            </div>
+            
+            <!-- Timeline Section -->
+            <div class="timeline-vertical fade-in fade-in-delay-2">
+                <!-- 2005-2007 -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2005 - 2007</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Guest Doctor</h4>
+                        <p class="timeline-desc">Esperienze cliniche presso ospedali universitari in Italia e Germania</p>
+                        <span class="timeline-badge"><i class="fas fa-hospital-alt mr-1"></i> Formazione avanzata</span>
+                    </div>
+                </div>
+                
+                <!-- 2008-2016 -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2008 - 2016</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Associate Neurosurgeon</h4>
+                        <p class="timeline-desc">International Neuroscience Institute (INI) di Hannover</p>
+                        <span class="timeline-badge"><i class="fas fa-user-md mr-1"></i> Chirurgia specialistica</span>
+                    </div>
+                </div>
+                
+                <!-- 2016-Presente -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2016 - Presente</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Assistant Medical Director</h4>
+                        <p class="timeline-desc">Dirigente medico (Oberarzt) presso INI Hannover</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="timeline-badge"><i class="fas fa-stethoscope mr-1"></i> Direzione</span>
+                            <span class="timeline-badge"><i class="fas fa-chalkboard-teacher mr-1"></i> Formazione</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Experience Info -->
+            <div class="mt-6 fade-in fade-in-delay-3">
+                <h3 class="text-lg font-semibold mb-3">Ambiti di specializzazione</h3>
+                
+                <div class="flex items-center bg-opacity-10 bg-white rounded-lg p-3 mb-3">
+                    <div class="circle-icon">
+                        <i class="fas fa-brain text-red-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium">Neurochirurgia della base cranica</h4>
+                        <p class="text-xs opacity-70">Approcci mini-invasivi</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center bg-opacity-10 bg-white rounded-lg p-3 mb-3">
+                    <div class="circle-icon">
+                        <i class="fas fa-vr-cardboard text-red-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium">Realtà aumentata in chirurgia</h4>
+                        <p class="text-xs opacity-70">Pioniere in tecnologie XR</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center bg-opacity-10 bg-white rounded-lg p-3">
+                    <div class="circle-icon">
+                        <i class="fas fa-microscope text-red-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium">Neuroendoscopia avanzata</h4>
+                        <p class="text-xs opacity-70">Procedure mininvasive</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom section -->
+            <div class="text-center mt-auto mb-6 fade-in fade-in-delay-3">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- script disattivato per uso offline -->
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_03.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_05.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+</body>
+</html>

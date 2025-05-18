@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mario Giordano - Competenze Linguistiche</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue-dark: #1a1a2e;
+            --white-ice: #f8f9fa;
+            --red-cerebral: #b30000;
+        }
+        
+        body {
+    
+    transition: opacity 1s ease-in;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--blue-dark);
+            color: var(--white-ice);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 390px;
+            min-height: 844px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .accent {
+            color: var(--red-cerebral);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes fadeIn {
+            from {  transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--red-cerebral), transparent);
+            margin: 24px 0;
+            width: 80%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .language-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .language-card:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--red-cerebral);
+            opacity: 0.8;
+        }
+        
+        .flag-icon {
+            font-size: 32px;
+            margin-right: 16px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        
+        .language-level {
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        .native {
+            background-color: rgba(179, 0, 0, 0.2);
+            border: 1px solid rgba(179, 0, 0, 0.4);
+        }
+        
+        .fluent {
+            background-color: rgba(25, 118, 210, 0.2);
+            border: 1px solid rgba(25, 118, 210, 0.4);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            animation: progressAnim 1.5s ease-out forwards;
+            width: 0;
+        }
+        
+        @keyframes progressAnim {
+            from { width: 0; }
+            to { width: var(--target-width); }
+        }
+        
+        .progress-italiano {
+            background: linear-gradient(to right, #008C45, #F4F5F0, #CD212A);
+            --target-width: 100%;
+        }
+        
+        .progress-tedesco {
+            background: linear-gradient(to right, #000000, #DD0000, #FFCE00);
+            --target-width: 95%;
+        }
+        
+        .progress-inglese {
+            background: linear-gradient(to right, #00247D, #CF142B, #FFFFFF);
+            --target-width: 90%;
+        }
+        
+        .language-bg {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 80px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .language-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .earth-icon {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+            animation: rotate 40s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col items-center">
+        <div class="content flex flex-col w-full h-full py-10 px-6">
+            <!-- Header -->
+            <div class="text-center mb-8 fade-in">
+                <h2 class="text-4xl font-bold mb-2">Competenze Linguistiche</h2>
+                <div class="section-divider mx-auto"></div>
+                <p class="text-base mt-4 opacity-80">Comunicazione efficace in contesti internazionali</p>
+            </div>
+            
+            <!-- Earth icon background -->
+            <div class="earth-icon">
+                <i class="fas fa-globe-europe"></i>
+            </div>
+            
+            <!-- Language Cards -->
+            <div class="flex flex-col w-full mt-6">
+                <!-- Italiano -->
+                <div class="language-card fade-in fade-in-delay-1">
+                    <div class="language-bg">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="language-content">
+                        <div class="flex items-center mb-3">
+                            <span class="flag-icon">🇮🇹</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Italiano</h3>
+                                <span class="language-level native">Madrelingua</span>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-80 mb-2">Lingua nativa, utilizzo quotidiano in contesti accademici e clinici</p>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-italiano"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tedesco -->
+                <div class="language-card fade-in fade-in-delay-2">
+                    <div class="language-bg">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="language-content">
+                        <div class="flex items-center mb-3">
+                            <span class="flag-icon">🇩🇪</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Tedesco</h3>
+                                <span class="language-level fluent">Fluente</span>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-80 mb-2">Utilizzo professionale e quotidiano in Germania, certificazione C2</p>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-tedesco"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Inglese -->
+                <div class="language-card fade-in fade-in-delay-3">
+                    <div class="language-bg">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="language-content">
+                        <div class="flex items-center mb-3">
+                            <span class="flag-icon">🇬🇧</span>
+                            <div>
+                                <h3 class="text-xl font-bold">Inglese</h3>
+                                <span class="language-level fluent">Fluente</span>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-80 mb-2">Utilizzo accademico e professionale, pubblicazioni e congressi internazionali</p>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-inglese"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quote -->
+                <div class="text-center mt-6 mb-4 fade-in fade-in-delay-3">
+                    <p class="italic text-sm opacity-80 px-4">"La capacità di comunicare in più lingue amplia gli orizzonti della collaborazione scientifica internazionale."</p>
+                </div>
+            </div>
+            
+            <!-- Bottom navigation -->
+            <div class="text-center mt-auto mb-6 fade-in fade-in-delay-3">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- script disattivato per uso offline -->
+
+        <div style="position: fixed; bottom: 15px; right: 15px; opacity: 0.15; z-index: 999;">
+            <img src="logo.png" alt="Logo Dr. Mario Giordano" style="width: 80px;">
+        </div>
+        
+
+        <div style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000;"><a href="slide_05.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">◀ Indietro</a>
+            <a href="index.html" style="background-color: #1a1a2e; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">🏠 Home</a>
+            <a href="slide_07.html" style="background-color: #b30000; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">Avanti ▶</a>
+        </div>
+        
+</body>
+</html>
